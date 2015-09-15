@@ -1,0 +1,164 @@
+// +----------------------------------------------------------------------
+// | 百叶集  demo版  API
+// +----------------------------------------------------------------------
+// | Author: postsanf <postsanf@163.com> 
+// +----------------------------------------------------------------------
+
+例：
+网站根目录：www.example.com
+项目文件夹：temp
+
+API访问：http://www.example.com/temp/+Url
+
+/****************************************/
+/**               用户                 **/
+/****************************************/
+
+/************************登录****************************/
+ 
+	
+	Url:  index.php?s=/Home/User/login
+	Method: POST
+	param:  username,password 
+	Return:
+	{
+	    "code": 1,    //1:成功   -1 : '用户不存在或被禁用！'; break; //系统级别禁用 -2: '密码错误！'  -3: '未知错误！'	
+	    "data": [
+	        {
+	            "id": "1",
+	            "usename": "admin",
+	            "mobile":"15527038394"
+	            "reg_time":"1441768173"
+	            "sex":"男"
+	            "identify":"在校生"
+	            "headpic":"http://image.asdfas.acd/asdfa.png"
+	        }
+	    ]
+	}
+
+/************************注册****************************/
+	
+	Url:  index.php?s=/Home/User/register
+	Method: POST
+	param:  username,password, $mobile , $sex , $identify 
+	Return:
+	{
+	    "code": 1,    //1:成功，0：失败   两次密码校对（前端完成）
+	    "data": [
+	        {
+	            
+	        }
+	    ]
+	}
+
+/***************************************************************/
+
+/****************************************/
+/**               首页                 **/
+/****************************************/
+
+/************************获取栏目列表****************************/
+	//获取物品分类 s=/Home/Hpage/getGoodsClass
+	//获取攻略分类 s=/Home/Hpage/getStrateClass
+	
+	Url:  index.php?s=/Home/Hpage/getGoodsClass
+	Method: POST/GET 
+	param:  null 
+	Return:
+	{
+	    "code": 1,    //1:成功，0：一级分类不存在（等同于无数据）
+	    "data": [
+	        {
+	            "id": "1",
+	            "title": "空间",
+	            "child": [
+	                {
+	                    "id": "4",
+	                    "title": "书房"
+	                },
+	                {
+	                    "id": "5",
+	                    "title": "卧室"
+	                }
+	            ]
+	        },
+	        {
+	            "id": "2",
+	            "title": "品类",
+	            "child": [
+	                {
+	                    "id": "9",
+	                    "title": "美饰"
+	                },
+	                {
+	                    "id": "10",
+	                    "title": "家具"
+	                }
+	            ]
+	        }
+	    ]
+	}
+
+/*************************首页轮播图****************************/
+
+	//获取首页轮播图
+	Url:  index.php?s=/Home/Hpage/getpicList
+	Method: POST/GET 
+	param:  null 
+	Return:
+	{
+	    "code": 1,  //1:成功，0：数据不存在
+	    "data": [
+	        {
+	            "id": "1",
+	            "description": "首页轮播图1",
+	            "url": "http://imgsrc.baidu.com/forum/pic/item/7cb76f23088dfe5643a75b05.jpg"
+	        },
+	        {
+	            "id": "2",
+	            "description": "首页轮播图2",
+	            "url": "http://imgsrc.baidu.com/forum/pic/item/7cb76f23088dfe5643a75b05.jpg"
+	        }
+	    ]
+	}
+
+/*************************攻略列表****************************/
+
+	//获取攻略列表（按时间顺序排，最新更新排列在前）
+	Url:  index.php?s=/Home/Hpage/getpicList
+	Method: POST/GET 
+	param:  null 
+	Return:
+	{
+	    "code": 1, //1:成功，0：暂无攻略
+	    "data": [
+	        {
+	            "id": "1",
+	            "title": "攻略1",
+	            "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	            "collectnums": "11",
+	            "sharenums": "22"
+	        },
+	        {
+	            "id": "2",
+	            "title": "攻略2",
+	            "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	            "collectnums": "21",
+	            "sharenums": "32"
+	        }
+	    ]
+	}
+
+/*************************************************************************/
+
+/****************************************/
+/**            详细信息                **/
+/****************************************/
+
+/***********************攻略详细信息****************************/
+
+	//根据攻略id获取攻略详细信息
+	Url:  index.php?s=/Home/Hpage/getpicList
+	Method: GET
+	param: strateid 
+	Return:
