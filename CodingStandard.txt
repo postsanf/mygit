@@ -1,0 +1,167 @@
+// +----------------------------------------------------------------------
+// | 百叶集  demo版  CodingStandard
+// +----------------------------------------------------------------------
+// | Author: postsanf <postsanf@163.com> 
+// +----------------------------------------------------------------------
+命名规则：
+	注：编程中除了约定俗成的字段，尽量少用缩写（若名称太长采用缩写，需在注释中说明）
+
+	常量：全部大写,采用下划线命名法  如：MIN_WIDTH  USERNAME    
+
+	包命名：反域名命名  cc.zouyizou.www
+
+	类命名：大驼峰
+			如:
+				Adapter 类 攻略详情  StrateDetailAdapter
+				Activity类 欢迎页面  WelcomeActivity
+				基础类  以Base开头   BaseActivity
+				公共方法类  Manager为后缀标识 ThreadPoolManager 线程池管理类
+ 				BroadcastReceive类  以Broadcast为后缀标识  时间通知TimeBroadcast
+
+ 	方法：小驼峰(如：onCreate(),run());
+
+	 	initXX() 		初始化相关方法,使用init为前缀标识，如初始化布局initView()
+		isXX() 			checkXX()方法返回值为boolean型的请使用is或check为前缀标识
+		getXX() 		返回某个值的方法，使用get为前缀标识
+		processXX()  	对数据进行处理的方法，尽量使用process为前缀标识
+		displayXX() 	弹出提示框和提示信息，使用display为前缀标识
+		saveXX() 		与保存数据相关的，使用sav为e前缀标识
+		resetXX() 		对数据重组的，使用reset前缀标识
+		clearXX() 		清除数据相关的
+		removeXXX()  	清除数据相关的
+		drawXXX() 		绘制数据或效果相关的，使用draw前缀标识
+
+	变量: 字段类型+名称   小驼峰 如:sUserName , iAge;
+
+		注：类中控件名称必须与xml布局id保持一致
+		用统一的量词通过在结尾处放置一个量词，就可创建更加统一的变量，容易理解，也容易搜索。
+		例如，请使用strCustomerFirst和strCustomerLast，而不要使用strFirstCustomer和strLastCustomer。
+		量词列表：量词后缀说明
+		First  一组变量中的第一个
+		Last   一组变量中的最后一个
+		Next   一组变量中的下一个变量
+		Prev   一组变量中的上一个
+		Cur    一组变量中的当前变量
+
+	资源文件（图片drawable文件夹下）：全部小写，采用下划线命名法，加前缀区分(图片尽量分拆成多个可重用的图片)
+
+		命名模式：activity名称_逻辑名称/common_逻辑名称
+		如果有多种形态如按钮等除外如btn_xx.xml（selector）
+		btn_xx 			按钮图片使用btn_整体效果（selector）
+		btn_xx_normal 	按钮图片使用btn_正常情况效果
+		btn_xx_press 	按钮图片使用btn_点击时候效果
+		bg_head 		背景图片使用bg_功能_说明
+		def_search_cell 默认图片使用def_功能_说明
+		icon_more_help 	图标图片使用icon_功能_说明
+		seg_list_line 	具有分隔特征的图片使用seg_功能_说明
+		sel_ok 			选择图标使用sel_功能_说明
+
+	资源布局文件（XML文件（layout布局文件））：
+
+		全部小写，采用下划线命名法
+		1．contentview命名, Activity默认布局，以去掉后缀的Activity类进行命名。不加后缀：
+		       功能模块.xml
+		       例如：main.xml、more.xml、settings.xml
+		        或则：activity_功能模块.xml
+		        例如：activity_main.xml、activity_more.xml
+		2．Dialog命名：dialog_描述.xml		       	例如：dlg_hint.xml
+		2．PopupWindow命名：ppw_描述.xml		    例如：ppw _info.xml
+		3. 列表项命名listitem_描述.xml		       	例如：listitem_city.xml
+		4．包含项：include_模块.xml		       		例如：include_head.xml、include_bottom.xml
+		5．adapter的子布局：功能模块_item.xml		例如：main_item.xml、
+
+	动画文件（anim文件夹下）：全部小写，采用下划线命名法，加前缀区分。
+
+		//前面为动画的类型，后面为方向
+		动画命名例子				规范写法
+		fade_in 					淡入
+		fade_out					淡出
+		push_down_in				从下方推入
+		push_down_out				从下方推出
+		push_left					推像左方
+		slide_in_from_top			从头部滑动进入
+		zoom_enter					变形进入
+		slide_in 		            滑动进入
+		shrink_to_middle			中间缩小
+
+	资源ID：大小写规范与方法名一致，小驼峰命名法。命名规范为“资源控件的缩写名”+“变量名”。注：页面控件名称应该和控件id名保持一致
+			
+ 		strings.xml，colors.xml等中的id命名：
+			命名模式：activity名称_功能模块名称_逻辑名称/activity名称_逻辑名称/common_逻辑名称
+			strings.xml中，使用activity名称注释，将文件内容区分开来
+
+	 layout中的id命名
+		命名模式为：view缩写_模块名称_view的逻辑名称
+		view的缩写详情如下：
+			控件 										缩写
+			LayoutView									lv
+			RelativeView								rv
+			TextView 									tv
+			Button 										btn
+			ImageButton        							imgBtn
+			ImageView         							mgView 或则 iv
+			CheckBox           							chk
+			RadioButton        							rdoBtn
+			analogClock        							anaClk
+			DigtalClock        							dgtClk
+			DatePicker         							dtPk
+			EditText           							edtTxt
+			TimePicker         							tmPk
+			toggleButton       							tglBtn
+			ProgressBar 								proBar
+			SeekBar                            			skBar
+			AutoCompleteTextView						autoTxt
+			ZoomControls       							zmCtl
+			VideoView          							vdoVi
+			WdbView            							webVi
+			RantingBar         							ratBar
+			Tab                							tab
+			Spinner            							spn
+			Chronometer        							cmt
+			ScollView          							sclVi
+			TextSwitch         							txtSwt
+			ImageSwitch        							imgSwt
+			listView           							lVi 或则lv
+			ExpandableList     							epdLt
+			MapView            							mapVi
+
+	styles.xml：将layout中不断重现的style提炼出通用的style通用组件，放到styles.xml中；
+
+
+注释规范：
+	文件顶栏：
+
+		// +----------------------------------------------------------------------
+		// | 项目名称  Version：版本  
+		// +----------------------------------------------------------------------
+		// | Author: 作者 <联系邮箱(可选择)>  
+		// +----------------------------------------------------------------------
+		// | Date: 	版本日期
+		// +----------------------------------------------------------------------
+
+	方法注释：
+		如：public void doGet (HttpServletRequest request, HttpServletResponse response) 
+
+		/* 
+		 * GET请求						 				(方法功能说明) 
+		 * @param   request   请求参数   				(参数说明)
+		 * @param   response  回调参数   				(参数说明)
+		 * 
+		 * (异常说明 @throws  IOException    IO异常 	(异常说明))
+		 */ 
+
+		说明：
+		/**
+		 *	@author    对类的说明 标明开发该类模块的作者 
+		 *	@version   对类的说明 标明该类模块的版本 
+		 *	@see      对类、属性、方法的说明 参考转向，也就是相关主题 
+		 *	@param    对方法的说明 对方法中某参数的说明 
+		 *	@return    对方法的说明 对方法返回值的说明 
+		 *	@exception  对方法的说明 对方法可能抛出的异常进行说明
+		 */
+
+	类注释：
+		/**
+		 *	类功能说明
+		 */
+
