@@ -186,7 +186,71 @@ API访问：http://www.example.com/temp/+Url
 /***********************攻略详细信息****************************/
 
 	//根据攻略id获取攻略详细信息
-	Url:  index.php?s=/Home/Hpage/getpicList
+	Url:  index.php?s=/Home/Info/getStrateDesc
 	Method: GET
 	param: strateid 
 	Return:
+	{
+	    "code": 2000, //2000 成功   40000 获取详情失败
+	    "child": [
+	        {
+	            "id": "1",
+	            "title": "商品1",
+	            "description": "描述1",
+	            "price": "000012.88",
+	            "collectnums": "0000000022"
+	        },
+	        {
+	            "id": "2",
+	            "title": "商品2",
+	            "description": "描述2",
+	            "price": "000013.64",
+	            "collectnums": "0000000032"
+	        },
+	        {
+	            "id": "4",
+	            "title": "商品4",
+	            "description": "描述4",
+	            "price": "000019.50",
+	            "collectnums": "0000000052"
+	        }
+	    ]
+	}
+
+/***********************物品详细信息****************************/
+
+	//根据物品id获取物品详细信息
+	Url:  index.php?s=/Home/Info/getGoodsDesc
+	Method: GET
+	param: goodsid 
+	Return:
+	{
+		"code": 2000, //2000 成功   40000 获取详情失败
+	    "data": {
+	        "info": [
+	            {
+	                "id": "1",
+	                "title": "商品1",
+	                "price": "000012.88",
+	                "description": "描述1",
+	                "article": "图文部分",
+	                "collectnums": "0000000022",
+	                "sharenums": "0000000023",
+	                "clicknums": "0000000024",
+	                "link": "www.baidu.com"
+	            }
+	        ],
+	        "piclist": [
+	            {
+	                "id": "5",
+	                "description": "商品1图1",
+	                "url": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg"
+	            },
+	            {
+	                "id": "6",
+	                "description": "商品1图2",
+	                "url": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg"
+	            }
+	        ]
+	    }
+	}
