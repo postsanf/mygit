@@ -68,7 +68,7 @@ API访问：http://www.example.com/temp/+Url
 	
 	Url:  index.php?s=/Home/User/register
 	Method: POST
-	param:  username,password,mobile,email,sex,identify 
+	param:  username,password,mobile,email,sex,identify  （email、sex、identify 可选）
 	Return:
 	{
 	    "code": 2000,   //其他注册错误请看返回码定义
@@ -85,6 +85,48 @@ API访问：http://www.example.com/temp/+Url
 	            "headpic": null
 	        }
 	    ]
+	}
+
+/************************更新****************************/
+	
+	//更新公共部分
+	Url:  index.php?s=/Home/User/profile
+	Method: POST
+	param:  id , username , email , sex , identify , headpic （除id外其他可选）
+	Return:
+	{
+	    "code": 2000,  //10031  更新失败   10001 参数错误
+	    "data": {
+	        "id": "56",
+	        "username": "postsanfcc",
+	        "email": "postsanf@163.com",
+	        "sex": "123",
+	        "identify": "123",
+	        "headpic": null
+	    }
+	}
+
+	//更新手机号码
+	Url:  index.php?s=/Home/User/profileMobile
+	Method: POST
+	param:  id , mobile
+	Return:
+	{
+	    "code": 2000,  //10031  更新失败   10001 参数错误
+	    "data": {
+	    	"id": "56",
+	        "mobile": "12323455463"
+	    }
+	}
+
+	//更新密码
+	Url:  index.php?s=/Home/User/profilepsw
+	Method: POST
+	param:  id , oldpsw , newpsw
+	Return:
+	{
+	    "code": 2000,  //10031  更新失败   10001 参数错误
+	    "data": ""
 	}
 
 /***************************************************************/
