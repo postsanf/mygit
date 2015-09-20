@@ -185,6 +185,33 @@ API访问：http://www.example.com/temp/+Url
 	    ]
 	}
 
+/*************************资讯列表****************************/
+
+	//获取资讯列表（按时间顺序排，最新更新排列在前）
+	Url:  index.php?s=/Home/Hpage/getInformationList
+	Method: POST/GET 
+	param:  null 
+	Return:
+	{
+	    "code": 2000,
+	    "data": [
+	        {
+	            "id": "1",
+	            "title": "资讯信息",
+	            "pic": "http://imgsrc.baidu.com/forum/pic/item/7cb76f23088dfe5643a75b05.jpg",
+	            "collectnums": "12",
+	            "sharenums": "14"
+	        },
+	        {
+	            "id": "2",
+	            "title": "资讯标题2",
+	            "pic": "http://imgsrc.baidu.com/forum/pic/item/7cb76f23088dfe5643a75b05.jpg",
+	            "collectnums": "22",
+	            "sharenums": "24"
+	        }
+	    ]
+	}
+
 /*************************************************************************/
 
 /****************************************/
