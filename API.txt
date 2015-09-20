@@ -68,13 +68,21 @@ API访问：http://www.example.com/temp/+Url
 	
 	Url:  index.php?s=/Home/User/register
 	Method: POST
-	param:  username,password,mobile,sex,identify 
+	param:  username,password,mobile,email,sex,identify 
 	Return:
 	{
-	    "code": 2000,    //2000:成功 两次密码校对（前端完成）
+	    "code": 2000,   //其他注册错误请看返回码定义
 	    "data": [
 	        {
-	            
+	            "id": "58",
+	            "username": "zouyizou",
+	            "password": "67e96eb819cc520b7ee77bafe6656f18",
+	            "email": "zouyizou@163.com",
+	            "mobile": "15184845656",
+	            "update_time": "1442735805",
+	            "sex": "男",
+	            "identify": "学生",
+	            "headpic": null
 	        }
 	    ]
 	}
