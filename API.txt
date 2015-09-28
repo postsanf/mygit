@@ -213,7 +213,10 @@ API访问：http://www.example.com/temp/+Url
 	//获取攻略列表（按时间顺序排，最新更新排列在前）
 	Url:  index.php?s=/Home/Hpage/getpicList
 	Method: POST  
-	param:  startnums,listnums (可选，startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据)
+	//四个参数可选  startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据
+	//showtype   排序规则  (1:热度_点击量  2：价格   默认：时间)
+    //upordown   升序or降序 (1：升序   默认降序)
+	param:  startnums,listnums,showtype,upordown   
 	Return:
 	{
 	    "code": 2000, //2000:成功 
@@ -240,7 +243,10 @@ API访问：http://www.example.com/temp/+Url
 	//获取资讯列表（按时间顺序排，最新更新排列在前）
 	Url:  index.php?s=/Home/Hpage/getInformationList
 	Method: POST  
-	param:  startnums,listnums (可选，startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据)
+	//四个参数可选  startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据
+	//showtype   排序规则  (1:热度_点击量  2：价格   默认：时间)
+    //upordown   升序or降序 (1：升序   默认降序)  
+	param:  startnums,listnums,showtype,upordown  
 	Return:
 	{
 	    "code": 2000,
@@ -267,9 +273,11 @@ API访问：http://www.example.com/temp/+Url
 	//获取物品列表（按时间顺序排，最新更新排列在前）
 	Url:  index.php?s=/Home/Hpage/getGoodsList
 	Method: POST  
-	//三个参数均可选，startnums 起始行 默认为 0 ,listnums 查询条数 默认为10 ，
-	//classid对应getGoodsClass返回数据的id项    默认查询所有  对应分类没数据返回code：2000 ，data：""           
-	param:  startnums,listnums,classid 
+	//五个参数均可选，startnums 起始行 默认为 0 ,listnums 查询条数 默认为10 ，
+	//classid对应getGoodsClass返回数据的child.id项(二级物品分类id)默认查询所有 没数据返回code：2000 ，data："" 
+	//showtype   排序规则  (1:热度_点击量  2：价格   默认：时间)
+    //upordown   升序or降序 (1：升序   默认降序)  
+	param:  startnums,listnums,classid,showtype,upordown
 	Return:
 	{
 	    "code": 2000,
@@ -496,3 +504,11 @@ API访问：http://www.example.com/temp/+Url
 	    "code": 2000, //2000 成功   40041 统计数据更新失败
 	    "data": ""
 	}
+
+/****************************************************************************/
+
+/****************************************/
+/**           搜索模块                 **/
+/****************************************/
+
+/*******************该模块仅物品搜索*********************/
