@@ -512,3 +512,22 @@ API访问：http://www.example.com/temp/+Url
 /****************************************/
 
 /*******************该模块仅物品搜索*********************/
+
+	Url:  index.php?s=/Home/Search/getSearchResult
+	Method: POST
+	//keyword  搜索的关键字
+	param: keyword , startnums , listnums , showtype , upordown(后四项可选填，具体详情看获取物品列表功能)
+	Return:
+	{
+	    "code": 2000,
+	    "data": [
+	        {
+	            "id": "2",
+	            "title": "商品2",
+	            "price": "000013.64",
+	            "collectnums": "32",
+	            "sharenums": "33",
+	            "pic": null
+	        }
+	    ]
+	}
