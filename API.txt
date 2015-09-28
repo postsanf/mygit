@@ -153,10 +153,14 @@ API访问：http://www.example.com/temp/+Url
 	                {
 	                    "id": "4",
 	                    "title": "书房"
+	                    "previd":"1"
+	                    "classify":"1"
 	                },
 	                {
 	                    "id": "5",
 	                    "title": "卧室"
+	                    "previd":"1"
+	                    "classify":"1"
 	                }
 	            ]
 	        },
@@ -167,10 +171,14 @@ API访问：http://www.example.com/temp/+Url
 	                {
 	                    "id": "9",
 	                    "title": "美饰"
+	                    "previd":"2"
+	                    "classify":"1"
 	                },
 	                {
 	                    "id": "10",
 	                    "title": "家具"
+	                    "previd":"2"
+	                    "classify":"1"
 	                }
 	            ]
 	        }
@@ -204,8 +212,8 @@ API访问：http://www.example.com/temp/+Url
 
 	//获取攻略列表（按时间顺序排，最新更新排列在前）
 	Url:  index.php?s=/Home/Hpage/getpicList
-	Method: POST/GET 
-	param:  null 
+	Method: POST  
+	param:  startnums,listnums (可选，startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据)
 	Return:
 	{
 	    "code": 2000, //2000:成功 
@@ -231,8 +239,8 @@ API访问：http://www.example.com/temp/+Url
 
 	//获取资讯列表（按时间顺序排，最新更新排列在前）
 	Url:  index.php?s=/Home/Hpage/getInformationList
-	Method: POST/GET 
-	param:  null 
+	Method: POST  
+	param:  startnums,listnums (可选，startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据)
 	Return:
 	{
 	    "code": 2000,
@@ -251,6 +259,37 @@ API访问：http://www.example.com/temp/+Url
 	            "collectnums": "22",
 	            "sharenums": "24"
 	        }
+	    ]
+	}
+
+/*************************物品列表****************************/
+
+	//获取物品列表（按时间顺序排，最新更新排列在前）
+	Url:  index.php?s=/Home/Hpage/getGoodsList
+	Method: POST  
+	//三个参数均可选，startnums 起始行 默认为 0 ,listnums 查询条数 默认为10 ，
+	//classid对应getGoodsClass返回数据的id项    默认查询所有  对应分类没数据返回code：2000 ，data：""           
+	param:  startnums,listnums,classid 
+	Return:
+	{
+	    "code": 2000,
+	    "data": [
+	        {
+	            "id": "1",
+	            "title": "商品1",
+	            "price": "000012.88",
+	            "collectnums": "1",
+	            "sharenums": "1",
+	            "pic": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg"
+	        },
+	        {
+	            "id": "3",
+	            "title": "商品3",
+	            "price": "000015.67",
+	            "collectnums": "42",
+	            "sharenums": "43",
+	            "pic": null
+	        } 
 	    ]
 	}
 
@@ -289,21 +328,21 @@ API访问：http://www.example.com/temp/+Url
                 "title": "商品1",
                 "description": "描述1",
                 "price": "000012.88",
-                "collectnums": "0000000022"
+                "collectnums": "22"
             },
             {
                 "id": "2",
                 "title": "商品2",
                 "description": "描述2",
                 "price": "000013.64",
-                "collectnums": "0000000032"
+                "collectnums": "32"
             },
             {
                 "id": "4",
                 "title": "商品4",
                 "description": "描述4",
                 "price": "000019.50",
-                "collectnums": "0000000052"
+                "collectnums": "52"
             }
         ]
     }
@@ -326,9 +365,9 @@ API访问：http://www.example.com/temp/+Url
 	                "price": "000012.88",
 	                "description": "描述1",
 	                "article": "图文部分",
-	                "collectnums": "0000000022",
-	                "sharenums": "0000000023",
-	                "clicknums": "0000000024",
+	                "collectnums": "22",
+	                "sharenums": "23",
+	                "clicknums": "24",
 	                "link": "www.baidu.com"
 	            }
 	        ],
@@ -412,7 +451,7 @@ API访问：http://www.example.com/temp/+Url
 	            "title": "商品1",
 	            "description": "描述1",
 	            "price": "000012.88",
-	            "collectnums": "0000000022",
+	            "collectnums": "22",
 	            "pic": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg"
 	        },
 	        {
@@ -420,7 +459,7 @@ API访问：http://www.example.com/temp/+Url
 	            "title": "商品2",
 	            "description": "描述2",
 	            "price": "000013.64",
-	            "collectnums": "0000000032",
+	            "collectnums": "32",
 	            "pic": null
 	        }
 	    ]
