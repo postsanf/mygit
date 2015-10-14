@@ -292,7 +292,8 @@ API访问：http://www.example.com/temp/+Url
 	            "price": "000012.88",
 	            "collectnums": "1",
 	            "sharenums": "1",
-	            "pic": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg"
+	            "pic": "http://i4.topit.me/4/ac/40/1170868443dda40ac4o.jpg",
+	            "uptime": "2015-09-19 12:45:25"
 	        },
 	        {
 	            "id": "3",
@@ -300,7 +301,8 @@ API访问：http://www.example.com/temp/+Url
 	            "price": "000015.67",
 	            "collectnums": "42",
 	            "sharenums": "43",
-	            "pic": null
+	            "pic": null,
+	            "uptime": "2015-09-19 12:45:25"
 	        } 
 	    ]
 	}
