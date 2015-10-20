@@ -122,7 +122,7 @@ API访问：http://www.example.com/temp/+Url
 	//更新密码
 	Url:  index.php?s=/Home/User/profilepsw
 	Method: POST
-	param:  id , oldpsw , newpsw
+	param:  id ,  newpsw
 	Return:
 	{
 	    "code": 2000,  //10031  更新失败   10001 参数错误
@@ -508,6 +508,18 @@ API访问：http://www.example.com/temp/+Url
 	Return:
 	{
 	    "code": 2000, //2000 成功   40041 统计数据更新失败
+	    "data": ""
+	}
+
+/*******************意见反馈************************/
+
+	// 意见反馈信息 code:2000 (成功)  data:"";
+	Url:  index.php?s=/Home/Operation/addSuggestion
+	Method: POST
+	param: userid ，suggestion
+	Return:
+	{
+	    "code": 2000, //2000 成功   10031 更新失败
 	    "data": ""
 	}
 
