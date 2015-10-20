@@ -215,8 +215,8 @@ API访问：http://www.example.com/temp/+Url
 	Method: POST  
 	//四个参数可选  startnums 起始行 默认为 0 ,listnums 查询数 默认为10  不传值则执行默认数据
 	//showtype   排序规则  (1:热度_点击量  2：价格   默认：时间)
-    //upordown   升序or降序 (1：升序   默认降序)
-	param:  startnums,listnums,showtype,upordown   
+    //upordown   升序or降序 (1：升序   默认降序)  classid   攻略分类id
+	param:  startnums,listnums,showtype,upordown ,classid
 	Return:
 	{
 	    "code": 2000, //2000:成功 
