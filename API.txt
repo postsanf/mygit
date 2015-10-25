@@ -499,14 +499,99 @@ API访问：http://www.example.com/temp/+Url
 /*******************点击/收藏/分享统计************************/
 	
 	//根据用户tid和类别classid（类别： 1：攻略， 2：物品 ， 3：资讯）操作类型operatorid （1：收藏 , 2：分享 3：点击）     
-	// 更新统计信息 code:2000 (成功)  data:"";
+	// 更新统计信息 code:2000 (成功)  data:"";  userid为空则不添加用户收藏
 	Url:  index.php?s=/Home/Operation/addOperator
 	Method: POST
-	param: operatorid ，tid ，classid
+	param: operatorid ，tid ，classid , userid
 	Return:
 	{
 	    "code": 2000, //2000 成功   40041 统计数据更新失败
 	    "data": ""
+	}
+
+
+	//根据用户userid和类别classid（类别： 1：攻略， 2：物品 ， 3：资讯）获取用户收藏    
+	 
+	Url:  index.php?s=/Home/Operation/getUserCollect
+	Method: POST
+	param: userid ，classid 
+
+	//资讯
+	Return:
+	{
+	    "code": 2000,
+	    "data": {
+	        "infomation": [
+	            {
+	                "id": "1",
+	                "title": "资讯标题1",
+	                "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	                "collectnums": "11",
+	                "sharenums": "33",
+	                "uptime": "2015-10-07 17:49:26"
+	            },
+	            {
+	                "id": "2",
+	                "title": "资讯标题2",
+	                "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	                "collectnums": "11",
+	                "sharenums": "33",
+	                "uptime": "2015-10-07 17:49:26"
+	            }
+	        ]
+	    }
+	}
+
+	//攻略
+	Return:
+	{
+	    "code": 2000,
+	    "data": {
+	        "strategy": [
+	            {
+	                "id": "1",
+	                "title": "攻略1",
+	                "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	                "collectnums": "17",
+	                "sharenums": "22",
+	                "uptime": "2015-09-15 02:09:57"
+	            },
+	            {
+	                "id": "3",
+	                "title": "攻略2",
+	                "pic": "http://f5.topit.me/5/8e/77/11097400911a8778e5o.jpg",
+	                "collectnums": "11",
+	                "sharenums": "22",
+	                "uptime": "2015-09-15 02:09:57"
+	            }
+	        ]
+	    }
+	}
+
+	//物品
+	Return:
+	{
+	    "code": 2000,
+	    "data": {
+	        "goods": [
+	            {
+	                "id": "1",
+	                "title": "商品1",
+	                "price": "000012.88",
+	                "collectnums": "1",
+	                "sharenums": "1",
+	                "pic": "http://www.zouyizou.cc/byj/test.jpg"
+	            },
+	            {
+	                "id": "2",
+	                "title": "商品2",
+	                "price": "000013.64",
+	                "collectnums": "32",
+	                "sharenums": "33",
+	                "pic": "http://www.zouyizou.cc/byj/test.jpg"
+	            }
+	        ]
+	    }
 	}
 
 /*******************意见反馈************************/
