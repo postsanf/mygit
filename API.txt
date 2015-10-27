@@ -120,7 +120,7 @@ API访问：http://www.example.com/temp/+Url
 	//更新密码
 	Url:  index.php?s=/Home/User/profilepsw
 	Method: POST
-	param:  id ,  newpsw
+	param:  id , mobile ,newpsw
 	Return:
 	{
 	    "code": 2000,  //10031  更新失败   10001 参数错误
