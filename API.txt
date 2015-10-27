@@ -498,7 +498,7 @@ API访问：http://www.example.com/temp/+Url
 
 /*******************点击/收藏/分享统计************************/
 	
-	//根据用户tid和类别classid（类别： 1：攻略， 2：物品 ， 3：资讯）操作类型operatorid （1：收藏 , 2：分享 3：点击）     
+	//根据产品tid和类别classid（类别： 1：攻略， 2：物品 ， 3：资讯）操作类型operatorid （1：收藏 , 2：分享 3：点击）     
 	// 更新统计信息 code:2000 (成功)  data:"";  userid为空则不添加用户收藏
 	Url:  index.php?s=/Home/Operation/addOperator
 	Method: POST
@@ -593,6 +593,21 @@ API访问：http://www.example.com/temp/+Url
 	        ]
 	    }
 	}
+
+/*******************取消收藏************************/
+	//用户userid不填则表示只取消产品收藏量   填写userid会对应去掉用户收藏信息
+	//根据用产品tid和类别classid（类别： 1：攻略， 2：物品 ， 3：资讯）
+	//该方法执行一次都会消除一次产品收藏量  请前台做判断
+	Url:  index.php?s=/Home/Operation/removeColllect
+	Method: POST
+	param: tid ，classid , userid（可选）
+	Return:
+	{
+	    "code": 2000, //2000 成功   50011 参数不全  50002 取消产品收藏错误  50003取消用户收藏错误
+	    "data": ""
+	}
+
+
 
 /*******************意见反馈************************/
 
